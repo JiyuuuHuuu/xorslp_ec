@@ -295,7 +295,7 @@ fn main() {
             data_size + xorslp_ec::BLOCK_SIZE_PER_ITER * (nr_data_block * 8)
         };
 
-        // println!("data size = {}", data_size);
+        println!("data size = {}", data_size);
 
         let mut enc_durations = Vec::new();
         let mut dec_durations = Vec::new();
@@ -310,6 +310,7 @@ fn main() {
 
         let input = fixed_array.split(nr_data_block * 8);
         let width = input[0].len();
+        println!("width = {}", width);
 
         let to_store = run::PageAlignedArray::new(width * nr_parity_block * 8).unwrap();
         let output = to_store.split(nr_parity_block * 8);
