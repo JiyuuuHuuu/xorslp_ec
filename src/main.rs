@@ -138,7 +138,7 @@ fn main() {
 
     // let enc = vandermonde::rsv(nr_data_block, nr_parity_block);
     let enc = vandermonde::isa_rsv(nr_data_block, nr_parity_block);
-    /*
+
     for i in 0..enc.height() {
         for j in 0..enc.width() {
             use xorslp_ec::fin_field::FiniteField;
@@ -146,7 +146,6 @@ fn main() {
         }
         println!("");
     }
-     */
 
     let bitmatrix_enc = rsv_bitmatrix::matrix_to_bitmatrix(&enc);
     let enc_slp = slp::SLP::build_from_bitmatrix_not_depending_variables(&bitmatrix_enc);
